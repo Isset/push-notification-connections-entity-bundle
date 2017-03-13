@@ -1,0 +1,22 @@
+{
+    "name": "issetbv/push-notification-connections-entity-bundle",
+    "description": "",
+    "homepage": "http://www.isset.nl",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Felix Balfoort",
+            "email": "felix@isset.nl"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "issetbv/push-notification-bundle": "^1.0",
+        "phpoption/phpoption": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "IssetBV\\PushNotificationConnectionsEntityBundle\\": ""
+        }
+    }
+}

@@ -1,0 +1,15 @@
+services:
+    isset_bv_push_notification_connections_entity.connection_converter.container:
+        class: IssetBV\PushNotificationConnectionsEntityBundle\Service\Converter\ConnectionConverterContainer
+    isset_bv_push_notification_connections_entity.entity_connection_handler:
+        class: IssetBV\PushNotificationConnectionsEntityBundle\Service\EntityConnectionHandler
+        arguments:
+            - '@isset_bv_push_notification_connections_entity.repository.push_notification_connection'
+            - '@isset_bv_push_notification_connections_entity.connection_converter.container'
+        calls:
+            - [setLogger, ["@=service(parameter('isset_bv_push_notification.center.logger.service'))"]]
+    isset_bv_push_notification_connections_entity.repository.push_notification_connection:
+        class: IssetBV\PushNotificationConnectionsEntityBundle\Repository\PushNotificationConnectionRepository
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments:
+            - IssetBV\PushNotificationConnectionsEntityBundle\Entity\PushNotificationConnection

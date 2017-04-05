@@ -21,12 +21,12 @@ class AppleConnectionConverter implements ConnectionConverter
      */
     public function convert(PushNotificationConnection $connection): Connection
     {
-        $url = $connection->getUrl();
-        $type = $connection->getType();
-        $pemKeyFile = $connection->getPemKeyFile();
-        $pemPasswordPhrase = $connection->getPemPasswordPhrase();
-
-        return new AppleConnection($url, $type, $pemKeyFile, $pemPasswordPhrase);
+        return new AppleConnection(
+            $connection->getType(),
+            $connection->getUrl(),
+            $connection->getPemKeyFile(),
+            $connection->getPemPasswordPhrase()
+        );
     }
 
     /**

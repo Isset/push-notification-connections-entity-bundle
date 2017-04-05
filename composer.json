@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=7.0",
-        "issetbv/push-notification-bundle": "^1.0",
+        "issetbv/push-notification-bundle": "^1.1",
         "phpoption/phpoption": "^1.5"
     },
     "autoload": {
